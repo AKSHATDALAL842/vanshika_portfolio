@@ -29,160 +29,139 @@ export const projectsData: Project[] = [
     afterImg: '/Branding/Branding_1/mockup.png',
     applications: [
       { title: 'Building Signage', imageUrl: '/Branding/Branding_1/ad_1.png' },
-      { title: 'Business Cards', imageUrl: '/Branding/Branding_1/ad_2.png' },
       { title: 'Staff Uniform', imageUrl: '/Branding/Branding_1/ad_3.png' },
-      { title: 'Presentation Folder', imageUrl: '/Branding/Branding_1/ad_4.png' },
-      { title: 'Notebook & Letterhead', imageUrl: '/Branding/Branding_1/ad_5.png' },
-      { title: 'Delivery Vehicle', imageUrl: '/Branding/Branding_1/ad_6.png' }
+      { title: 'Delivery Vehicle', imageUrl: '/Branding/Branding_1/ad_6.png' },
+      { title: 'Safety Helmet', imageUrl: '/Branding/Branding_1/ad_8.png' }
     ],
     mockups: [
       { imageUrl: '/Branding/Branding_1/draft.png', alt: 'Duratech mascot design and character sheet' },
-      { imageUrl: '/Branding/Branding_1/mockup.png', alt: 'Duratech logo construction grid' }
+      { imageUrl: '/Branding/Branding_1/mockup.png', alt: 'Duratech logo construction grid' },
+      { imageUrl: '/Branding/Branding_1/ad_2.png', alt: 'Business Cards' },
+      { imageUrl: '/Branding/Branding_1/ad_4.png', alt: 'Presentation Folder' },
+      { imageUrl: '/Branding/Branding_1/ad_5.png', alt: 'Notebook & Letterhead' },
+      { imageUrl: '/Branding/Branding_1/ad_7.png', alt: 'Invoice' }
     ]
   },
   {
-    id: 'logoipsum-mobile',
-    title: 'Logoipsum Mobile App',
-    category: 'Case Study',
-    year: '2024',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANRh_1JhYDNnNh5pPdKGiDK-1AyqbCwYBn2WSP6IQf8NQ3CoXcYgb6CTXTHkGg7hotzeBDxk9fhrnDox6jXzQVIlgaBpHYERm0KMl9bUYBGIXsztUjEdHOFSHJGHuYDbAQurHhlj0v-k2HkHQREOMuVce_NSXf3F8QtGmYKD9FMFEEH2g5TAJ9INE7rXY5gtV1QwmxNcQQfpsLSEUjQN6Qyag2NET334jG1EbjXKSEyO4SINNlqp57jhZ3ITAn-onaUandTaPvsJBM',
-    description: 'A sleek, high-contrast digital mockup of a mobile banking app interface displayed on a premium smartphone. The UI is minimalist, using a deep black background with white typography and a vibrant blue brand accent color.',
-    challenges: [
-      'Establishing high readability on dark, light-restricted screens while maintaining a minimalist design language.',
-      'Structuring complex financial data into digestible, clean components without cluttering the mobile workspace.',
-      'Achieving architectural precision in typography sizing and vertical spacing grid alignments.'
-    ],
-    solutions: [
-      'Implemented a modular 8px spatial grid to achieve pixel-perfect consistency across all dashboard view screens.',
-      'Designed a vibrant custom blue accent hue paired with pure white typography to guarantee over 4.5:1 contrast ratios on deep black.',
-      'Engineered an intuitive, nested transaction ledger visualization that reduces screen fatigue.'
-    ],
-    client: 'Logoipsum Finance Ltd.',
-    role: 'Lead UX/UI & Brand Identity Designer',
-    colors: ['#131313', '#FFFFFF', '#2563EB', '#3B82F6'],
-    typography: ['Inter', 'Space Grotesk'],
-    beforeImg: 'https://picsum.photos/seed/mobile-sketch/800/600?blur=1',
-    afterImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANRh_1JhYDNnNh5pPdKGiDK-1AyqbCwYBn2WSP6IQf8NQ3CoXcYgb6CTXTHkGg7hotzeBDxk9fhrnDox6jXzQVIlgaBpHYERm0KMl9bUYBGIXsztUjEdHOFSHJGHuYDbAQurHhlj0v-k2HkHQREOMuVce_NSXf3F8QtGmYKD9FMFEEH2g5TAJ9INE7rXY5gtV1QwmxNcQQfpsLSEUjQN6Qyag2NET334jG1EbjXKSEyO4SINNlqp57jhZ3ITAn-onaUandTaPvsJBM'
-  },
-  {
-    id: 'logo-landing-page',
-    title: 'Logo Landing Page',
-    category: 'Case Study',
-    year: '2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjCB-dOTiwWIxwO9JS1ILe88jVwmDAvu0EcLBeZlAU7KWA3n0Ubwu6PzkEcEj4EhKShTMGoASQ4CmUY9lJEEAohF8Bvn2OqA_SGVJ3f2FVoq61gBMCYOo-CaG03Om4h7R2oKDGJVTWhFJ4CJQUmOJ-S9axARRuq6QT4QO4UOBgNjHRa-jyunfhDXtJiHc7sFesHpEMH5y_62G8BHRKGNDdWRjA4AFBcBnoqMItLIP8tOmgpga1T7kVZ_HmhLKSgDn7qE6iBs5EnDr0',
-    description: 'A professional showcase of a corporate landing page design on a high-end laptop. The website features bold, geometric typography and a sophisticated grid layout with monochromatic contrast.',
-    challenges: [
-      'Creating a lasting brand impression purely through black & white visual elements without relying on colorful branding tricks.',
-      'Translating corporate values into a striking geometric layout that signals premium executive craftsmanship.',
-      'Aligning website sections dynamically to respect standard desktop viewing boundaries.'
-    ],
-    solutions: [
-      'Utilized high-weight geometric letterforms from Epilogue to form striking visual anchors on the homepage.',
-      'Divided core sections with razor-thin, elegant lines reminiscent of architectural blue-prints.',
-      'Constructed a rigid 12-column layout to naturally guide visitors from abstract core concepts down to detailed product grids.'
-    ],
-    client: 'Logoipsum Architectural Systems',
-    role: 'Art Director & Lead Web Designer',
-    colors: ['#000000', '#FFFFFF', '#1F1F1F', '#8E9192'],
-    typography: ['Epilogue', 'Inter'],
-    beforeImg: 'https://picsum.photos/seed/web-wireframe/800/600?blur=1',
-    afterImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjCB-dOTiwWIxwO9JS1ILe88jVwmDAvu0EcLBeZlAU7KWA3n0Ubwu6PzkEcEj4EhKShTMGoASQ4CmUY9lJEEAohF8Bvn2OqA_SGVJ3f2FVoq61gBMCYOo-CaG03Om4h7R2oKDGJVTWhFJ4CJQUmOJ-S9axARRuq6QT4QO4UOBgNjHRa-jyunfhDXtJiHc7sFesHpEMH5y_62G8BHRKGNDdWRjA4AFBcBnoqMItLIP8tOmgpga1T7kVZ_HmhLKSgDn7qE6iBs5EnDr0'
-  },
-  {
-    id: 'logo-ipsum-website',
-    title: 'Logo Ipsum Website',
-    category: 'Case Study',
-    year: '2024',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0vn2zDAEMvbTKyOhm8r-lSfINHsByv5P23zGb5o27uWOH9UWVwJmX_MDTZHzmbURp74rjjVaoQrztmQkuOTUMKZsHRv-7nFPvRDz_dyzBgEBsqbuWt85vtavegcal5ir1Ti4YUsZliChD0ofp3oxVv9AY_xwZ0dnRg-Oxp8fDEQTZcKQEYvfeJWNh70jU-GwGFVnotMc6mmludtOmgXGQyrXZNd0RHRrdLW3DgyEZDtU3_fQJXr3n8UqxS79P7ckb4S22MeHY3oXg',
-    description: 'A minimalist web design presentation showing a clean, modern homepage layout. The design utilizes extensive white space and a rigorous vertical rhythm targeting high-luxury lifestyle brands.',
-    challenges: [
-      'Presenting brand identity mockups as fine art gallery displays within a functional, fast-loading digital web portal.',
-      'Achieving organic user flow on highly conceptual, sparse visual stages.',
-      'Balancing heavy typography headers with extremely delicate body descriptions.'
-    ],
-    solutions: [
-      'Crafted a gallery-inspired dark mode canvas with wide 160px padding blocks to give the visuals generous breathing room.',
-      'Engineered smooth, elegant page transition states using spring-physics loops.',
-      'Paired heavy font-weight displays with mono-spaced utility markers to capture the modern corporate mood.'
-    ],
-    client: 'Logoipsum Creative Lab',
-    role: 'Interaction & Interactive Web Architect',
-    colors: ['#0E0E0E', '#FFFFFF', '#1F1F1F', '#C4C7C8'],
-    typography: ['Epilogue', 'JetBrains Mono'],
-    beforeImg: 'https://picsum.photos/seed/gallery-sketch/800/600?blur=1',
-    afterImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0vn2zDAEMvbTKyOhm8r-lSfINHsByv5P23zGb5o27uWOH9UWVwJmX_MDTZHzmbURp74rjjVaoQrztmQkuOTUMKZsHRv-7nFPvRDz_dyzBgEBsqbuWt85vtavegcal5ir1Ti4YUsZliChD0ofp3oxVv9AY_xwZ0dnRg-Oxp8fDEQTZcKQEYvfeJWNh70jU-GwGFVnotMc6mmludtOmgXGQyrXZNd0RHRrdLW3DgyEZDtU3_fQJXr3n8UqxS79P7ckb4S22MeHY3oXg'
-  },
-  {
-    id: 'logoipsum-watch',
-    title: 'Logoipsum Watch App',
-    category: 'Case Study',
-    year: '2024',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeNAa55Hg5yK8q8xNpI2r0OqX6Zf6ygQj0-eiVUw48Ynlx91jzWvqXId11iRzpJsPQJ0Grs9F2YTBoh2GwXKUlu_5LDkOs_tWF1sTMf-EFEnCnuMrmy9VhDhf3ZfCEnBZkcujd44R_ZWtVwGd50WOB-Rs-t-MDU7fJuf-gubG0nm8Z1E3igM3OCg0aWqOZPPz0pTla6-LVBxpzkBHQ3McgY_LfFuLLBrnIxuIe3nqngULkto96F-AQE5JcOyI2fh0co5epAKI8IdSI',
-    description: 'A premium watch app interface design displayed on a digital wearable device. The UI is focused on high-precision data visualization with sharp, thin lines and clear typography.',
-    challenges: [
-      'Rendering deep technical charts, telemetry vectors, and high-frequency indices on a constrained wrist-worn container.',
-      'Sustaining legible layouts with high tactile response under rapidly moving outdoor conditions.',
-      'Harmonizing physical smartwatch geometry with fluid interface modules.'
-    ],
-    solutions: [
-      'Crafted a radial dial tracking interface optimized around high-contrast vectors and neon status gauges.',
-      'Engineered clean micro-grids of 4px to align sub-second timestamps and heart-rate intervals.',
-      'Paired custom high-energy digital markers with dark, energy-efficient battery-saving panels.'
-    ],
-    client: 'Logoipsum Precision Instruments',
-    role: 'Lead Wearable UI Architect',
-    colors: ['#0A0A0A', '#FFFFFF', '#00FFCC', '#222222'],
-    typography: ['Fira Code', 'Inter'],
-    beforeImg: 'https://picsum.photos/seed/watch-sketch/800/600?blur=1',
-    afterImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeNAa55Hg5yK8q8xNpI2r0OqX6Zf6ygQj0-eiVUw48Ynlx91jzWvqXId11iRzpJsPQJ0Grs9F2YTBoh2GwXKUlu_5LDkOs_tWF1sTMf-EFEnCnuMrmy9VhDhf3ZfCEnBZkcujd44R_ZWtVwGd50WOB-Rs-t-MDU7fJuf-gubG0nm8Z1E3igM3OCg0aWqOZPPz0pTla6-LVBxpzkBHQ3McgY_LfFuLLBrnIxuIe3nqngULkto96F-AQE5JcOyI2fh0co5epAKI8IdSI'
-  },
-  {
-    id: 'ritva-branding',
-    title: 'Ritva Co. Fine Jewelry',
+    id: 'sajke-branding',
+    title: 'Sajke Clothing',
     category: 'Branding',
-    year: '2024',
-    imageUrl: 'https://picsum.photos/seed/jewelry/800/600',
-    description: 'An elegant, high-end visual identity and monogram brand system designed for Ritva Co., a bespoke fine jewelry company.',
+    year: '2026',
+    imageUrl: '/Branding/Branding_2/ad_1.png',
+    description: "Sajke is a modern fashion brand that celebrates simplicity, elegance, and femininity. It brings together beautiful designs, soft details, and timeless styles to create outfits that feel both comfortable and classy. Sajke is made for women who love looking effortlessly stylish and believe in keeping fashion simple yet elegant.",
+    brief: "To redesign Sajke's visual identity to reflect its elegant and feminine personality, while creating a consistent brand experience across packaging, stationery and social media.",
     challenges: [
-      'Capturing the delicate, reflective qualities of precious gemstones and metals within a minimalist digital vector mark.',
-      'Creating a modular monogram that works beautifully as a miniature jewelry engraving, leather stamp, and massive display logo.',
-      'Synthesizing luxury heritage motifs with a sleek modern digital atmosphere.'
+      "Balancing traditional aesthetics with a modern look.",
+      "Creating a premium yet minimal visual identity.",
+      "Reflecting elegance and femininity through design.",
+      "Maintaining consistency across all brand applications.",
+      "Making the brand stand out in the fashion market."
     ],
     solutions: [
-      'Hand-crafted a geometric serif ligature monogram with tight mathematical curves for perfect balance.',
-      'Established a warm, refined color system consisting of ivory, champagne gold, and charcoal slate.',
-      'Designed luxury brand guidelines specifying spacious margins, sophisticated grid offsets, and blind-embossing guidelines.'
+      "Designed a serif wordmark with flowing curves to express elegance and femininity.",
+      "Chose maroon, cream and muted pink to reflect warmth and sophistication.",
+      "Used fabric textures to establish a connection with traditional clothing.",
+      "Combined minimal layouts with elegant typography and natural photography.",
+      "Created a consistent visual identity across packaging, stationery and social media."
     ],
-    client: 'Ritva Co. Jewelers',
+    client: 'Sajke Clothing',
     role: 'Brand Identity Designer',
-    colors: ['#FAF9F6', '#D4AF37', '#1E1E1E', '#3E3E3E'],
-    typography: ['Playfair Display', 'Inter'],
-    beforeImg: 'https://picsum.photos/seed/jewelry-sketch/800/600?blur=1',
-    afterImg: 'https://picsum.photos/seed/jewelry/800/600'
+    industry: 'Fashion & Apparel',
+    colors: ['#5B0F1A', '#F3E9DC', '#D9A5A8'],
+    typography: [],
+    beforeImg: '/Branding/Branding_2/ad_2.png',
+    afterImg: '/Branding/Branding_2/ad_3.png',
+    applications: [
+      { title: 'Instagram Stories', imageUrl: '/Branding/Branding_2/ad_4.png' },
+      { title: 'Instagram Profile', imageUrl: '/Branding/Branding_2/ad_7.png' }
+    ],
+    mockups: [
+      { imageUrl: '/Branding/Branding_2/ad_5.png', alt: 'Invoice and thank-you cards' },
+      { imageUrl: '/Branding/Branding_2/ad_6.png', alt: 'Shopping bag and business cards' }
+    ]
   },
   {
-    id: 'aroha-packaging',
-    title: 'Aroha Cosmetic Packaging',
+    id: 'silence-campaign',
+    title: 'SILENCE DOES’NT MEAN “YES”',
     category: 'Advertisement',
-    year: '2024',
-    imageUrl: 'https://picsum.photos/seed/cosmetics/800/600',
-    description: 'A luxurious and sustainable box and bottle packaging design series for Aroha Cosmetics, focusing on organic skincare products.',
+    year: '2026',
+    imageUrl: '/Branding/Advertisment_1/ad_1.png',
+    description: "A minimal yet striking social campaign driven by high contrast and restrained colour. Partially concealed faces create tension, revealing just enough to evoke curiosity. The tone is quiet, subtle and thought-provoking, leaning into discomfort to encourage reflection rather than direct instruction.",
+    sections: [
+      { heading: 'Style', body: "Minimal yet striking, driven by high contrast and restrained color. Partially concealed faces create tension revealing just enough to evoke curiosity." },
+      { heading: 'Tone', body: "Quiet, subtle, and thought-provoking. It leans into discomfort, encouraging reflection rather than direct instruction." },
+      { heading: 'Direction', body: "Built around everyday emotional interactions. Highlights what is said versus what is truly meant, bringing the ‘unspoken’ into focus." },
+      { heading: 'Art Direction', body: "Close-up portraits with obscured expressions on bold, minimal backgrounds. A dominant red palette paired with clean typography for sharp, clear messaging." }
+    ],
+    client: 'Vishākhā',
+    role: 'Graphic Designer',
+    industry: 'Social Awareness Campaign',
+    deliverables: ['Poster Design', 'Outdoor & Print Media', 'Social Media'],
+    colors: ['#8B1A1F', '#E02027', '#FDFDF1'],
+    typography: [],
+    beforeImg: '/Branding/Advertisment_1/ad_1.png',
+    afterImg: '/Branding/Advertisment_1/ad_2.png',
+    applications: [
+      { title: 'Bus Shelter Posters', imageUrl: '/Branding/Advertisment_1/ad_6.png' },
+      { title: 'Billboard', imageUrl: '/Branding/Advertisment_1/ad_7.png' },
+      { title: 'Wall Posters', imageUrl: '/Branding/Advertisment_1/ad_8.png' },
+      { title: 'Metro Station Board', imageUrl: '/Branding/Advertisment_1/ad_9.png' },
+      { title: 'Newspaper Ad', imageUrl: '/Branding/Advertisment_1/ad_10.png' },
+      { title: 'Instagram', imageUrl: '/Branding/Advertisment_1/ad_11.png' }
+    ],
+    mockups: [
+      { imageUrl: '/Branding/Advertisment_1/ad_3.png', alt: 'Ideation and concept development' },
+      { imageUrl: '/Branding/Advertisment_1/ad_4.png', alt: 'Campaign strategy' },
+      { imageUrl: '/Branding/Advertisment_1/ad_5.png', alt: 'Visual rationale' }
+    ]
+  },
+  {
+    id: 'dore-branding',
+    title: 'Dore Bakery & Coffee House',
+    category: 'Branding',
+    year: '2026',
+    imageUrl: '/Branding/Branding_3/1.gif',
+    description: "Dore is a contemporary neighbourhood bakery inspired by the simple pleasure of freshly baked treats and everyday coffee rituals. From flaky croissants and soft cream rolls to cookies, cupcakes and carefully brewed coffee, Dore brings together comforting flavours and a playful visual identity. Every detail, from the way a pastry is wrapped to the way a coffee is served, is designed to make the everyday feel a little more special.",
+    brief: "To create a warm and playful visual identity for Dore that reflects its personality and connects with customers through thoughtful branding, packaging and café experiences.",
     challenges: [
-      'Balancing premium cosmetic luxury codes with biodegradable, raw material packaging substrates.',
-      'Structuring multi-lingual regulatory ingredients and user directions legibly on extremely small curves.',
-      'Creating physical-to-digital cohesion with eye-safe botanical pigments.'
+      "Balancing playfulness with simplicity.",
+      "Bringing coffee and bakery culture together under one identity.",
+      "Creating a familiar yet distinctive brand personality.",
+      "Making everyday café experiences visually memorable.",
+      "Maintaining consistency across all brand applications."
     ],
     solutions: [
-      'Styled earthy green tones combined with delicate gold-leaf hot stamps for a premium, organic look.',
-      'Implemented clean, micro-layout columns utilizing high-legibility Inter typeface guidelines.',
-      'Devised flat-lay structural die cuts and customized cardboard textures to eliminate adhesive plastic layers completely.'
+      "Designed a handwritten wordmark to create a warm and personal feel.",
+      "Used earthy brown, cream and terracotta shades inspired by coffee and baked goods.",
+      "Created playful, hand-drawn illustrations of bakery products.",
+      "Paired monospaced and sans-serif fonts for a clean yet distinctive look.",
+      "Extended the visual identity across packaging, menus and café essentials."
     ],
-    client: 'Aroha Cosmetics Co.',
-    role: 'Structural & Packaging Designer',
-    colors: ['#E6EADF', '#4A5D4E', '#DFD3C3', '#1C281F'],
-    typography: ['Outfit', 'Inter'],
-    beforeImg: 'https://picsum.photos/seed/cosmetics-sketch/800/600?blur=1',
-    afterImg: 'https://picsum.photos/seed/cosmetics/800/600'
+    client: 'Dore Bakery & Coffee House',
+    role: 'Brand Identity Designer',
+    industry: 'Bakery & Café',
+    colors: ['#542A20', '#F3EADC', '#C2693F'],
+    typography: [],
+    beforeImg: '/Branding/Branding_3/2.png',
+    afterImg: '/Branding/Branding_3/3.png',
+    applications: [
+      { title: 'Storefront Signage', imageUrl: '/Branding/Branding_3/11.png' },
+      { title: 'Paper Bags & Moodboard', imageUrl: '/Branding/Branding_3/12.png' },
+      { title: 'Tote Bag & Bread Tag', imageUrl: '/Branding/Branding_3/13.png' },
+      { title: 'Price Tag', imageUrl: '/Branding/Branding_3/15.png' },
+      { title: 'Coffee Cup & Gift Wrap', imageUrl: '/Branding/Branding_3/16.png' },
+      { title: 'Bread Banner', imageUrl: '/Branding/Branding_3/17.png' }
+    ],
+    mockups: [
+      { imageUrl: '/Branding/Branding_3/4.png', alt: 'Hand-drawn bakery illustrations' },
+      { imageUrl: '/Branding/Branding_3/5.png', alt: 'Wordmark, symbol and colour lockups' },
+      { imageUrl: '/Branding/Branding_3/6.png', alt: 'Business cards' },
+      { imageUrl: '/Branding/Branding_3/7.png', alt: 'Embroidered apron' },
+      { imageUrl: '/Branding/Branding_3/8.png', alt: 'Business card with pastries' },
+      { imageUrl: '/Branding/Branding_3/9.png', alt: 'Napkin, coffee bag and menu' },
+      { imageUrl: '/Branding/Branding_3/10.png', alt: 'Coffee cups' },
+      { imageUrl: '/Branding/Branding_3/14.png', alt: 'Wrapping paper' }
+    ]
   }
 ];
 

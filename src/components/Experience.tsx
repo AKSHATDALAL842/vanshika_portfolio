@@ -5,7 +5,6 @@ import { Briefcase, GraduationCap, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState<'all' | 'experience' | 'education'>('all');
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const filteredTimeline = activeTab === 'all'
     ? experienceData
@@ -25,22 +24,29 @@ export default function Experience() {
         </div>
 
         {/* Dynamic Tab Switcher */}
-        <div className="flex bg-brand-surface p-1 rounded-xl border border-brand-border/60 self-start md:self-auto">
+        <div className="relative flex bg-brand-surface p-1 rounded-xl border border-brand-border/60 self-start md:self-auto">
           {(['all', 'experience', 'education'] as const).map((tab) => (
             <button
               key={tab}
               id={`journey-tab-${tab}`}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-lg font-sans text-xs font-semibold tracking-wider transition-all cursor-pointer focus:outline-none flex items-center gap-1.5 ${
-                activeTab === tab
-                  ? 'bg-zinc-800 text-white shadow-md'
-                  : 'text-brand-text-muted hover:text-white'
+              className={`relative px-4 py-2 rounded-lg font-sans text-xs font-semibold tracking-wider transition-colors duration-300 cursor-pointer focus:outline-none flex items-center gap-1.5 ${
+                activeTab === tab ? 'text-white' : 'text-brand-text-muted hover:text-white'
               }`}
             >
-              {tab === 'experience' && <Briefcase className="w-3.5 h-3.5" />}
-              {tab === 'education' && <GraduationCap className="w-3.5 h-3.5" />}
-              {tab === 'all' && <Sparkles className="w-3.5 h-3.5" />}
-              {tab.toUpperCase()}
+              {activeTab === tab && (
+                <motion.span
+                  layoutId="journeyTabPill"
+                  className="absolute inset-0 rounded-lg bg-zinc-800 shadow-md"
+                  transition={{ type: 'spring', stiffness: 400, damping: 36 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-1.5">
+                {tab === 'experience' && <Briefcase className="w-3.5 h-3.5" />}
+                {tab === 'education' && <GraduationCap className="w-3.5 h-3.5" />}
+                {tab === 'all' && <Sparkles className="w-3.5 h-3.5" />}
+                {tab.toUpperCase()}
+              </span>
             </button>
           ))}
         </div>
@@ -48,21 +54,22 @@ export default function Experience() {
 
       {/* Timeline Layout */}
       <div className="space-y-12">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
           {filteredTimeline.map((item, index) => {
-            const isHovered = hoveredId === item.id;
-            
             return (
               <motion.div
                 key={item.id}
                 id={`timeline-item-${item.id}`}
-                layout
-                initial={{ opacity: 0, y: 15 }}
+                layout="position"
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-                onMouseEnter={() => setHoveredId(item.id)}
-                onMouseLeave={() => setHoveredId(null)}
+                exit={{ opacity: 0, y: -12, transition: { duration: 0.2, ease: 'easeIn' } }}
+                transition={{
+                  duration: 0.55,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: index * 0.07,
+                  layout: { type: 'spring', stiffness: 260, damping: 32 },
+                }}
                 className="flex flex-col md:flex-row gap-6 md:gap-12 border-b border-brand-border pb-12 last:border-0 relative group"
               >
                 {/* Horizontal split left-side: Duration & Company */}
@@ -110,18 +117,13 @@ export default function Experience() {
                   </ul>
 
                   {/* Creative Interactive Touch: Key Tools applied showcase */}
-                  {isHovered && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="pt-4 flex items-center gap-1.5 text-[10px] font-mono text-white/50"
-                    >
+                  {/* Always rendered (space reserved) so hovering never shifts the layout */}
+                  <div className="pt-4 flex items-center gap-1.5 text-[10px] font-mono text-white/50 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
                       <span className="text-zinc-600">APPLIED VALUES:</span>
                       <span className="bg-white/5 px-2 py-0.5 rounded border border-white/5">ACCURACY</span>
                       <span className="bg-white/5 px-2 py-0.5 rounded border border-white/5">STRATEGY</span>
                       <span className="bg-white/5 px-2 py-0.5 rounded border border-white/5">COHESION</span>
-                    </motion.div>
-                  )}
+                  </div>
                 </div>
               </motion.div>
             );

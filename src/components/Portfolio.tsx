@@ -22,6 +22,8 @@ export default function Portfolio() {
     return () => window.removeEventListener('keydown', onKey);
   }, [lightbox]);
 
+  const isAd = activeProject?.category === 'Advertisement';
+
   const categories = ['All', 'Branding', 'Advertisement', 'Case Study'];
 
   const filteredProjects = selectedCategory === 'All'
@@ -245,9 +247,6 @@ export default function Portfolio() {
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-xs font-mono font-bold text-white border border-white/15">
-                          CREATIVE DRAFT / SKETCH
-                        </div>
                       </div>
 
                       {/* After State (Top layer clipped) */}
@@ -261,9 +260,6 @@ export default function Portfolio() {
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute bottom-4 right-4 bg-white text-black px-3 py-1 rounded-md text-xs font-mono font-bold border border-brand-border shadow">
-                          FINAL DIGITAL MOCKUP
-                        </div>
                       </div>
 
                       {/* Split Divider bar */}
@@ -299,7 +295,7 @@ export default function Portfolio() {
                       modalTab === 'brand-assets' ? 'text-white border-b-2 border-white' : 'text-brand-text-muted hover:text-white'
                     }`}
                   >
-                    BRAND ASSETS & TIMELINE SLIDER
+                    {isAd ? 'AD CONCEPT & SLIDER' : 'BRAND ASSETS & TIMELINE SLIDER'}
                   </button>
                   <span className="self-center w-px h-4 bg-brand-border" aria-hidden="true" />
                   <button
@@ -309,7 +305,7 @@ export default function Portfolio() {
                       modalTab === 'applications' ? 'text-white border-b-2 border-white' : 'text-brand-text-muted hover:text-white'
                     }`}
                   >
-                    APPLICATIONS
+                    {isAd ? 'EXECUTION' : 'APPLICATIONS'}
                   </button>
                 </div>
 
@@ -320,6 +316,24 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Left 2 Columns: Client, Brief, Challenges */}
                       <div className="lg:col-span-2 space-y-6">
+                        {activeProject.sections ? (
+                          <>
+                            <h1 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                              {activeProject.title}
+                            </h1>
+                            {activeProject.sections.map((sec: { heading: string; body: string }) => (
+                              <div key={sec.heading} className="space-y-3">
+                                <h4 className="font-mono text-xs font-bold text-white tracking-widest uppercase border-b border-brand-border/40 pb-2">
+                                  {sec.heading}
+                                </h4>
+                                <p className="font-sans text-brand-text-muted text-sm leading-relaxed">
+                                  {sec.body}
+                                </p>
+                              </div>
+                            ))}
+                          </>
+                        ) : (
+                          <>
                         <div>
                           <h1 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
                             {activeProject.title}
@@ -370,6 +384,8 @@ export default function Portfolio() {
                             ))}
                           </ul>
                         </div>
+                          </>
+                        )}
                       </div>
 
                       {/* Right 1 Column: Metadata box */}
@@ -405,9 +421,9 @@ export default function Portfolio() {
                             <span className="text-sm font-semibold text-white">{activeProject.duration}</span>
                           ) : (
                             <div className="flex flex-wrap gap-1.5 pt-1">
-                              <span className="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-zinc-300">Monogram Design</span>
-                              <span className="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-zinc-300">Corporate System</span>
-                              <span className="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-zinc-300">Press Guidelines</span>
+                              {(activeProject.deliverables ?? ['Monogram Design', 'Corporate System', 'Press Guidelines']).map((d: string) => (
+                                <span key={d} className="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-zinc-300">{d}</span>
+                              ))}
                             </div>
                           )}
                         </div>
@@ -417,7 +433,7 @@ export default function Portfolio() {
                     /* APPLICATIONS PANEL */
                     <div className="space-y-6">
                       <h4 className="font-mono text-xs font-bold text-white tracking-widest uppercase border-b border-brand-border/40 pb-2">
-                        Brand Applications
+                        {isAd ? 'Execution' : 'Brand Applications'}
                       </h4>
                       {activeProject.applications && activeProject.applications.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -464,7 +480,7 @@ export default function Portfolio() {
                       {activeProject.mockups && activeProject.mockups.length > 0 && (
                         <div className="space-y-4">
                           <h4 className="font-mono text-xs font-bold text-white tracking-widest uppercase border-b border-brand-border/40 pb-2">
-                            Mockup
+                            {isAd ? 'Ad Concept' : 'Mockup'}
                           </h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {activeProject.mockups.map((m: { imageUrl: string; alt: string }) => (
