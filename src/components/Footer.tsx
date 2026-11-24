@@ -33,14 +33,14 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 items-center text-xs font-semibold tracking-wider font-sans">
             <a
               id="footer-link-portfolio"
-              href="/#portfolio"
+              href="#portfolio"
               className="text-brand-text-muted hover:text-white transition-colors uppercase"
             >
               Portfolio
             </a>
             <a
               id="footer-link-about"
-              href="/#about"
+              href="#about"
               className="text-brand-text-muted hover:text-white transition-colors uppercase"
             >
               About

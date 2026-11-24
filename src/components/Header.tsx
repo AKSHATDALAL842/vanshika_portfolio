@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Palette, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useJourneyRoute } from '../useJourneyRoute';
 
 interface HeaderProps {
   activeSection: string;
@@ -18,25 +19,25 @@ export default function Header({ activeSection }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isJourneyPage = window.location.pathname === '/journey';
+  const isJourneyPage = useJourneyRoute();
 
   const navItems = [
     { label: 'Portfolio', href: '#portfolio' },
     { label: 'About', href: '#about' },
-    { label: 'Journey', href: '/journey' },
+    { label: 'Journey', href: '#/journey' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' }
   ];
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    if (id === '/journey') {
-      window.location.href = '/journey';
+    if (id === '#/journey') {
+      window.location.hash = '#/journey';
       return;
     }
     // On the Journey page, section links lead back to the main page
     if (isJourneyPage) {
-      window.location.href = `/${id}`;
+      window.location.hash = id;
       return;
     }
     const element = document.querySelector(id);
@@ -59,7 +60,7 @@ export default function Header({ activeSection }: HeaderProps) {
         <button
           id="btn-logo"
           onClick={() => {
-            if (isJourneyPage) window.location.href = '/';
+            if (isJourneyPage) window.location.hash = '#hero';
             else window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className="flex items-center gap-2.5 group cursor-pointer text-left focus:outline-none"
@@ -76,7 +77,7 @@ export default function Header({ activeSection }: HeaderProps) {
         <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => {
             const isActive = isJourneyPage
-              ? item.href === '/journey'
+              ? item.href === '#/journey'
               : activeSection === item.href.replace('#', '');
             return (
               <button
@@ -133,7 +134,7 @@ export default function Header({ activeSection }: HeaderProps) {
             <div className="px-6 py-8 flex flex-col gap-6">
               {navItems.map((item) => {
                 const isActive = isJourneyPage
-              ? item.href === '/journey'
+              ? item.href === '#/journey'
               : activeSection === item.href.replace('#', '');
                 return (
                   <button

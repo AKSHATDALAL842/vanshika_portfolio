@@ -8,10 +8,21 @@ import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useJourneyRoute } from './useJourneyRoute';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  const isJourneyPage = window.location.pathname === '/journey';
+  const isJourneyPage = useJourneyRoute();
+
+  // After switching back from Journey, scroll to the section named in the hash
+  useEffect(() => {
+    const id = window.location.hash;
+    if (isJourneyPage) {
+      window.scrollTo({ top: 0 });
+    } else if (id && id !== '#/journey') {
+      document.querySelector(id)?.scrollIntoView();
+    }
+  }, [isJourneyPage]);
 
   useEffect(() => {
     if (isJourneyPage) return;
